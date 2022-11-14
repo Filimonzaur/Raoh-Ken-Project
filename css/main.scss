@@ -1,0 +1,237 @@
+*{
+  margin: 0em;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  overflow: hidden;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background-color: white;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Kanit', sans-serif;
+}
+.hero{
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-content{
+  margin: 0 5em 0;
+  max-width: 45em;
+  transition: all .8s ease;
+  h1{
+    margin: 0 0 .5em;
+    font-size: 2rem;
+  }
+  span{
+    color: red;
+  }
+  p{
+    color: rgba(255, 255, 255, 0.75);
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    display: inline-block;
+  }
+}
+.button-hero{
+  display: block;
+  padding: .8em 1.6em;
+  background-color: orange;
+  margin: 2em auto;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  border: solid 2px transparent;
+  margin-bottom: 3em;
+  &:active,&:hover{
+    border: solid 2px orange;
+    background-color: black;
+    color: orange;
+  }
+}
+.book{
+  margin: -2em 0 0;
+  max-width: 80em;
+  transition: all .8s ease;
+}
+.content{
+  max-width: 130em;
+  padding: 2em 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+}
+.raohken-image{
+  width: 45%;
+  margin-bottom: -10em;
+  margin-right: -5em;
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(97, 97, 97, 0.283));
+  filter: drop-shadow(-5px 1px 12px rgb(118, 117, 117));
+  min-width: 30em;
+  display: none;
+  transition: all .8s ease;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.button,
+.button:after {
+  cursor: pointer;
+  width: 100%;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: 'BUTTON';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+.button:hover:after, .button:active:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+form{
+  width: 300%;
+}
+footer{
+  height: 5em;
+  background-color: black;
+  margin-top: 2em;
+}
+@media (min-width: 850px){
+  body{
+    background-color: white;
+  }
+  .hero{
+    flex-direction: row-reverse;
+    text-align: left;
+    padding: 0 -3em;
+    height: 80vh;
+  }
+  .hero-content{
+    min-width: 18.5em;
+    margin: 0 5em 0 0;
+    h1{
+      font-size: 2.5rem;
+    }
+  }
+  .book{
+    margin: -1em 0 0 0;
+    width: 150%;
+  }
+  .button-hero{
+    margin: 2em 0;
+    min-width: 120px;
+  }
+  .raohken-image{
+    display: block;
+  }
+  footer{
+    background-image: linear-gradient(to right,red, rgb(194, 0, 0));
+    margin-top: 1.5em;
+  }
+  .divider{
+    display: none;
+  }
+  .button,
+  .button:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+  form{
+    width: 90%;
+  }
+  .content{
+    padding: 2em 15em 0;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
